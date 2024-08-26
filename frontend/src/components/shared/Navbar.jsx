@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../button";
-import { Popover, PopoverContent, PopoverTrigger } from "../popover";
-import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
+import { Button } from "../ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
 
 const Navbar = () => {

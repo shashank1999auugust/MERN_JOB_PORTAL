@@ -1,10 +1,10 @@
 import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import Login from './components/ui/auth/Login'
-import Signup from './components/ui/auth/Signup'
-import Navbar from './components/ui/shared/Navbar'
+import Login from './components/auth/Login'
+import Signup from './components/auth/Signup'
+import Navbar from './components/shared/Navbar'
 import {createBrowserRouter} from "react-router-dom"
-import Home from './components/ui/Home'
+import Home from './components/Home'
 
 const appRouter= createBrowserRouter([
   {
