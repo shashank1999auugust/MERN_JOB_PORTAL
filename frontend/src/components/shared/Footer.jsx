@@ -1,4 +1,4 @@
-// Footer.jsx
+// Footer.jsx //Ineedto addlinks->will add later
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
