@@ -47,6 +47,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         formData.append("file",input.file)
       }
       try {
+        setLoading(true)
         const res= await axios.post(`${USER_API_END_POINT}/profile/update`, formData,{
             headers:{
                 'Content-Type':'multipart/form-data'
@@ -60,6 +61,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
       } catch (error) {
         console.log(error)
         toast.error(error.response.data.message)
+      } finally{
+        setLoading(false)
       }
       setOpen(false)
       console.log(input)
