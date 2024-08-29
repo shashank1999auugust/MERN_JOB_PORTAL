@@ -4,12 +4,11 @@ import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-    const user=false
 
-
-
+    const {user} = useSelector(store=>store.auth)
 
 
   return (
@@ -53,7 +52,7 @@ const Navbar = () => {
                   <div className="flex flex-col my-2 text-gray-600">
                     <div className="flex items-center cursor-pointer gap-2 w-fit">
                         <User2/>
-                    <Button variant="link">View Profile</Button>
+                    <Button variant="link"><Link to="/profile">View Profile</Link></Button>
                     </div>
                     <div className="flex items-center cursor-pointer gap-2 w-fit">
                     <LogOut/>
