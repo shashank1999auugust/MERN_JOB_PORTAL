@@ -24,7 +24,7 @@ try {
     return res.status(201).json({
         message: 'Company registered successfully',
         company,
-        sucess:true
+        success:true
     })
 } catch (error) {
     console.log(error)
