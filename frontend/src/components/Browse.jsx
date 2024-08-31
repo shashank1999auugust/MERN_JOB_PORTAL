@@ -12,6 +12,7 @@ const Browse = () => {
         <h1 className="font-bold text-xl my-10">Search Results ({RandomJobs.length})</h1>
         <div className="grid grid-cols-3 gap-4">
           {RandomJobs.map((item, index) => {
+            
             return <Job />;
           })}
         </div>
