@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import axios from "axios";
 import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice";
+import { setFilterSearch } from "@/redux/jobSlice";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
@@ -22,6 +23,7 @@ const Navbar = () => {
       });
       if (res.data.success) {
         dispatch(setUser(null));
+        dispatch(setFilterSearch(""))
         navigate("/");
         toast.success(res.data.message);
       }

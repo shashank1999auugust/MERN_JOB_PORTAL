@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from './ui/radio-group'
 import { Label } from './ui/label'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setFilterSearch, setSearchedQuery } from '@/redux/jobSlice'
+import { Button } from './ui/button'
 
 const filterData=[
     {
@@ -22,18 +23,30 @@ const filterData=[
 
 
 const FilterCard = () => {
-    const[selectedValue,setSelectedValue]=useState("")
-   const dispatch =useDispatch()
-    const changeHandler=(value)=>{
-       setSelectedValue(value)
-    }
-   useEffect(()=>{
-     dispatch(setFilterSearch(selectedValue))
+//     const[selectedValue,setSelectedValue]=useState("")
+//    const dispatch =useDispatch()
+//     const changeHandler=(value)=>{
+//        setSelectedValue(value)
+//     }
+//    useEffect(()=>{
+//      dispatch(setFilterSearch(selectedValue))
      
-   },[selectedValue])
+//    },[selectedValue])
+const dispatch = useDispatch();
+const selectedValue = useSelector((state) => state.job.filtersearch);
+
+const changeHandler = (value) => {
+  dispatch(setFilterSearch(value));
+};
+
+const resetFilterHandler = () => {
+    dispatch(setFilterSearch("")); // Reset the filtersearch value to an empty string
+  };
+
   return (
     <div className='w-full bg-white p-3 rounded-md'>
       <h1 className='font-bold text-lg'>Filter Jobs</h1>
+      <Button onClick={resetFilterHandler}>Reset filter</Button>
       <hr className='mt-3'/>
       <RadioGroup value={selectedValue} onValueChange={changeHandler}>
         {
